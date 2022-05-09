@@ -1,0 +1,10 @@
+stages:
+  - run
+
+build-code-job:
+  stage: run
+  tags:
+    - test
+  script:
+    - echo "Building App"
+    - go run

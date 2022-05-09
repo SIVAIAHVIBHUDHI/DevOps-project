@@ -1,0 +1,23 @@
+How to set-up static ip adderess in VM machine
+==============================================
+$ sudo ip a
+$ sudo ifconfig
+$ sudo cd /etc/netplan
+$ sudo vi 01-netcfg.yml
+
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: no
+      gateway4: 192.168.251.51
+      addresses: [192.168.251.51/24]
+      nameservers:
+        addresses: [8.8.8.8,8.8.4.4]
+
+Configure the ip adderess of this yaml file.
+
+$ sudo netplan apply
+
+Then successfully ip adderess is configured. 
