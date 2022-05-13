@@ -17,11 +17,4 @@ pipeline {
                 sh 'go build hello-world.go'
             }
         }
-        stage('Test') {
-            steps {
-                    echo 'Running command to run appication'
-                    sh 'ls -ltr'
-            }
-        }
-    }
-}
+        
